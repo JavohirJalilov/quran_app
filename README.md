@@ -1,0 +1,1 @@
+# Qur'onda har bir suralarning arabchasi va tarjimasi
