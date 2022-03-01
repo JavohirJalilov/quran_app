@@ -1,4 +1,4 @@
-001 Al-Fatiha
+001,Al-Fatiha
 002,Al-Baqara
 003,Aal-E-Imran
 004,An-Nisa
