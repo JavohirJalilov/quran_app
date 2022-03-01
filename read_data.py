@@ -32,9 +32,24 @@ def arabic2uzbek(data_arabic:list, data_uzbek:list):
         data_arabic[i]['text'] = f"{arabic_word}\n\n{uzbek_work}"
     return data_arabic
 
+def sort_surah(data_arabic_and_uzbek:list)->list:
+    surah_list = []
+    ayah_list = []
+    for ayah in data_arabic_and_uzbek:
+        if ayah['verse'] == 1:
+            surah_list.append(ayah_list)
+            ayah_list = []
+            ayah_list.append(ayah)
+            
+        else:
+            ayah_list.append(ayah)
+    
+    return surah_list[1:]
+    
+
 data_arabic = read_quranacademy('data/ara-quranacademy.json')
 data_uzbek = read_quranacademy('data/uzb-muhammadsodikmu.json')
 
 conv = arabic2uzbek(data_arabic, data_uzbek)
-
-print(conv[0])
+surah_list = sort_surah(conv)
+print(surah_list[2][4])
